@@ -1,0 +1,48 @@
+﻿@using Entities
+@model Passenger
+@{
+    ViewData["Title"] = "Registration";
+}
+
+<div class="prizeForm">
+    <form class="form" asp-action="Add">
+        <p class="title">Введите данные</p>
+
+        <p class="phone">Номер телефона:</p>
+        <input asp-for="PhoneNumber" type="text" value="+7" class="name">
+        <span asp-validation-for="PhoneNumber"></span>
+
+        <p class="pass">Пароль:</p>
+        <input asp-for="Password" type="password" class="passField">
+        <span asp-validation-for="Password"></span>
+
+        <p class="confirmPass">Повторите пароль:</p>
+        <input asp-for="Password" type="password" class="confirmPassField">
+        <span class="error"></span>
+
+        <p class="name">Имя:</p>
+        <input asp-for="FirstName" type="text" class="firstName">
+        <span asp-validation-for="FirstName"></span>
+
+        <p class="secondName">Фамилия:</p>
+        <input asp-for="SecondName" type="text" class="secondName">
+        <span asp-validation-for="SecondName"></span>
+
+        <p class="patronym">Отчество:</p>
+        <input asp-for="Patronym" type="text" class="patronym">
+        <span asp-validation-for="Patronym"></span>
+
+        <p class="dateOfBirth">Дата:</p>
+        <input asp-for="BirthDate" type="date" min="1900-01-01" max ="@DateTime.Today.Year.ToString()-@DateTime.Today.Month.ToString()-@DateTime.Today.Day.ToString()" class="date">
+        <span asp-validation-for="BirthDate"></span>
+
+        <button type="submit" class="acceptBtn">Готово</button>
+    </form>
+</div>
+
+@section scripts{
+    <script src="~\js\passConfirmationValidation.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/passConfirmationValidation.js" asp-append-version="true"></script>
+}

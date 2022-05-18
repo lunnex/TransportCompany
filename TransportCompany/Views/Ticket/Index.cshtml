@@ -1,0 +1,39 @@
+﻿@using BLL
+@using Entities;
+@model PurchaseViewModel
+@{
+    ViewData["Title"] = "PurchaseTicket";
+}
+
+<div class="ticket">
+
+    <h3>@Model.Tariff.Name</h3>
+    <table class="table">
+        <tr>
+            <th>Название зоны</th>
+            <th>Расположение зоны</th>
+            <th>Цена, ₽</th>
+        </tr>
+
+
+
+        @for (int i = 0; i < Model.TariffZones.Count; i++)
+        {
+            <tr>
+                <td>Зона @Model.TariffZones[i].Name</td>
+                <td>Зона @Model.TariffZones[i].Description</td>
+                <td>@Model.Prices[i]</td>
+
+                <td>
+                    <form asp-controller = "Ticket", asp-action = "Add">
+                        <input type="hidden" name = "phoneUser" value=@User.Identity.Name>
+                        <input type="hidden" name = "idTariffZone" value=@Model.TariffZones[i].Id>
+                        <input type="hidden" name = "tariffId" value=@Model.Tariff.Id>
+                        <button type="submit"> Купить </button>
+                    </form>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

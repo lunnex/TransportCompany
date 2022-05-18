@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c4174748-8ab3-41b4-a934-936858d1e2ab": {
+      "ProjectGuid": "c4174748-8ab3-41b4-a934-936858d1e2ab",
+      "DisplayName": "TransportCompany",
+      "ColorIndex": 0
+    },
+    "13c6cd1f-ed35-417a-86c7-3e3980c1c0a3": {
+      "ProjectGuid": "13c6cd1f-ed35-417a-86c7-3e3980c1c0a3",
+      "DisplayName": "Interfaces",
+      "ColorIndex": 1
+    },
+    "7115fbd2-d3c6-4acc-be2a-8a7d2e32bdb2": {
+      "ProjectGuid": "7115fbd2-d3c6-4acc-be2a-8a7d2e32bdb2",
+      "DisplayName": "Entities",
+      "ColorIndex": 2
+    },
+    "918a2c4d-b7b9-46ef-bc58-bc76356c1ccf": {
+      "ProjectGuid": "918a2c4d-b7b9-46ef-bc58-bc76356c1ccf",
+      "DisplayName": "DAL",
+      "ColorIndex": 3
+    },
+    "bc4f9e66-693b-4f4a-9d04-8f2d264506bc": {
+      "ProjectGuid": "bc4f9e66-693b-4f4a-9d04-8f2d264506bc",
+      "DisplayName": "BLL",
+      "ColorIndex": 4
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Прочие файлы",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 5
+}

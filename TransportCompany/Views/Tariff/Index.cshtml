@@ -1,0 +1,37 @@
+﻿@using Entities;
+@model IList<Tariff>
+@{
+    ViewData["Title"] = "Tariffs";
+}
+
+<div class="tariffs">
+
+    <table class="table">
+        <tr>
+            <th>Доступные тарифы</th>
+            <th>Количество доступных поездок</th>
+            <th>Время действия</th>
+            <td>Цена</td>
+            <td></td>
+        </tr>
+
+        @foreach (var tariff in Model)
+        {
+            <tr>
+                <td name="name">@tariff.Name</td>
+                <td name="TripCount">@tariff.TripCount</td>
+                <td name="ValidityPeriod">@tariff.ValidityPeriod</td>
+                <td name="Button">
+
+                @if(User.Identity.IsAuthenticated)
+                {
+                    <form asp-controller="Ticket" asp-action="Index" class = chooseTariff>
+                        <input name="tarifId" type="hidden" value = @tariff.Id>
+                        <button type="submit">Выбрать</button>
+                    </form>
+                }
+                </td>
+            </tr>
+        }
+    </table>
+</div>

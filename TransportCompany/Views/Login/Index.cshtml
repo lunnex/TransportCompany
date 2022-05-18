@@ -1,0 +1,23 @@
+﻿@using Entities
+@model Passenger
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="loginForm">
+    <form class="form" asp-action="Login">
+        <p class="title">Введите данные</p>
+
+        <p class="formText1">Номер телефона:</p>
+        <input asp-for="PhoneNumber" type="text" class="name">
+        <p class="errorName"></p>
+
+        <p class="formText2">Пароль:</p>
+        <input asp-for="Password" type="password" class="pass">
+        <p class="errorDescription"></p>
+        <p class="errorDescription"></p>
+
+        <button type="submit" class="acceptBtn">Вход</button>
+        <button asp-controller="Registration" asp-action="Index" class="acceptBtn">Регистрация</button>
+    </form>
+</div>

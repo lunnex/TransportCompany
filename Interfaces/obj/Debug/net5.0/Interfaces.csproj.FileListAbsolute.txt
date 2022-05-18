@@ -1,0 +1,15 @@
+C:\Users\ilyak\source\repos\TransportCompany\Interfaces\bin\Debug\net5.0\Interfaces.deps.json
+C:\Users\ilyak\source\repos\TransportCompany\Interfaces\bin\Debug\net5.0\Interfaces.dll
+C:\Users\ilyak\source\repos\TransportCompany\Interfaces\bin\Debug\net5.0\ref\Interfaces.dll
+C:\Users\ilyak\source\repos\TransportCompany\Interfaces\bin\Debug\net5.0\Interfaces.pdb
+C:\Users\ilyak\source\repos\TransportCompany\Interfaces\bin\Debug\net5.0\Entities.dll
+C:\Users\ilyak\source\repos\TransportCompany\Interfaces\bin\Debug\net5.0\Entities.pdb
+C:\Users\ilyak\source\repos\TransportCompany\Interfaces\obj\Debug\net5.0\Interfaces.csproj.AssemblyReference.cache
+C:\Users\ilyak\source\repos\TransportCompany\Interfaces\obj\Debug\net5.0\Interfaces.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ilyak\source\repos\TransportCompany\Interfaces\obj\Debug\net5.0\Interfaces.AssemblyInfoInputs.cache
+C:\Users\ilyak\source\repos\TransportCompany\Interfaces\obj\Debug\net5.0\Interfaces.AssemblyInfo.cs
+C:\Users\ilyak\source\repos\TransportCompany\Interfaces\obj\Debug\net5.0\Interfaces.csproj.CoreCompileInputs.cache
+C:\Users\ilyak\source\repos\TransportCompany\Interfaces\obj\Debug\net5.0\Interfaces.csproj.CopyComplete
+C:\Users\ilyak\source\repos\TransportCompany\Interfaces\obj\Debug\net5.0\Interfaces.dll
+C:\Users\ilyak\source\repos\TransportCompany\Interfaces\obj\Debug\net5.0\ref\Interfaces.dll
+C:\Users\ilyak\source\repos\TransportCompany\Interfaces\obj\Debug\net5.0\Interfaces.pdb
