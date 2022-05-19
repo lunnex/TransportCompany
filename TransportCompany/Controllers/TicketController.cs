@@ -4,6 +4,8 @@ using Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System;
+using System.Collections.Generic;
+using System.Text.Json;
 using TransportCompany.Models;
 
 namespace TransportCompany.Controllers
@@ -39,7 +41,9 @@ namespace TransportCompany.Controllers
         public IActionResult Add(string phoneUser, int idTariffZone, int tariffId)
         {
             Tariff tariff = _tariffBL.Get(tariffId);
+            TariffZone tariffZone = _tariffZoneBL.Get(idTariffZone);
             Ticket ticket = null;
+
             if(tariff.ValidityPeriod == null)
             {
                 ticket = new Ticket(0, phoneUser, tariff.Id, idTariffZone, DateTime.Now, null, tariff.TripCount);
@@ -50,7 +54,11 @@ namespace TransportCompany.Controllers
             }
             _ticketeBL.Add(ticket);
 
-            return View("Index", "Confirmaion");
+            PurchaseViewModel purchaseViewModel = new PurchaseViewModel(new List<TariffZone>() { tariffZone}, tariff);
+            string jsonString = JsonSerializer.Serialize<PurchaseViewModel>(purchaseViewModel);
+            SerializedPurchase serializedPurchase = new SerializedPurchase(jsonString);
+
+            return RedirectToAction("Index", "Confirmation", serializedPurchase);
         }
     }
 }

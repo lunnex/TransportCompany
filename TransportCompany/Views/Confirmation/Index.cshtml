@@ -1,13 +1,34 @@
 ﻿@model PurchaseViewModel
+@{
+    ViewData["Title"] = "Confirmation";
+}
+
+<h2>Покупка совершена!</h2>
 
 <div>
     <table>
         <tr>
             <td>
-                @Model.Tariff.Name
+                Название тарифа: @Model.Tariff.Name
             </td>
+        </tr>
+        <tr>
             <td>
-                @Model.Prices
+                Цена: @Model.Prices[0]
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form>
+                    <button asp-controller="PersonalCabinet" asp-action="Index">В личный кабинет</button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form>
+                    <button asp-controller="Home" asp-action="Index">На главную</button>
+                </form>
             </td>
         </tr>
     </table>

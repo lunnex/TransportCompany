@@ -10,6 +10,8 @@ namespace TransportCompany.Controllers
     {
         private readonly PassengerDAL _passengerDAL;
         private readonly PassengerBLL _passengerBL;
+        private readonly TicketDAL _ticketDAL;
+        private readonly TicketBLL _ticketBL;
         private readonly IConfiguration _configuration;
 
         public PersonalCabinetController(IConfiguration configuration)
@@ -17,6 +19,8 @@ namespace TransportCompany.Controllers
             _configuration = configuration;
             _passengerDAL = new PassengerDAL(_configuration.GetConnectionString("Database"));
             _passengerBL = new PassengerBLL(_passengerDAL);
+            _ticketDAL = new TicketDAL(_configuration.GetConnectionString("Database"));
+            _ticketBL = new TicketBLL(_ticketDAL);
         }
 
         public IActionResult Index()

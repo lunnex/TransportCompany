@@ -3,6 +3,7 @@ using DAL;
 using Entities;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -47,17 +48,15 @@ namespace TransportCompany.Controllers
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
 
                 return RedirectToAction("Index", "PersonalCabinet");
-
             }
             else
             {
-                return View();
+                return RedirectToAction("Index");
             }
         }
 
         public async Task<IActionResult> Logout()
         {
-
             await HttpContext.SignOutAsync();
 
             return RedirectToAction("Index");

@@ -14,11 +14,14 @@ namespace TransportCompany.Models
             TariffZones = tariffZones;
             Tariff = tariff;
             Prices = new List<double>();
-            
+
             foreach (var zone in tariffZones)
             {
                 Prices.Add(System.Math.Round(zone.Coefficient * (double)tariff.Price, 2));
             }
+        }
+        public PurchaseViewModel()
+        {
         }
     }
 
