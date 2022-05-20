@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using TransportCompany.Models;
 
 namespace TransportCompany.Controllers
 {
@@ -26,10 +27,13 @@ namespace TransportCompany.Controllers
             _passengerBL = new PassengerBLL(_passengerDAL);
         }
 
-        public IActionResult Index()
+        public IActionResult Index(LoginModel lm)
         {
-            return View();
+
+            return View(lm);
         }
+
+
 
         public async Task<IActionResult> Login(string phoneNumber, string password)
         {
@@ -51,7 +55,8 @@ namespace TransportCompany.Controllers
             }
             else
             {
-                return RedirectToAction("Index");
+                LoginModel lm = new LoginModel(null, null, true);
+                return RedirectToAction("Index",lm);
             }
         }
 

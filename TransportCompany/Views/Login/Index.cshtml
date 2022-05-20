@@ -11,21 +11,31 @@
         <p class="formText1">Номер телефона:</p>
         <input asp-for="PhoneNumber" type="text" class="name">
         <span asp-validation-for="PhoneNumber"></span>
-        <p class="errorName"></p>
 
         <p class="formText2">Пароль:</p>
         <input asp-for="Password" type="password" class="pass">
         <span asp-validation-for="Password"></span>
-        <p class="errorDescription"></p>
-        <p class="errorDescription"></p>
+
+        @if (@Model is not null && @Model.WasError)
+        {
+            <p>Такого пользователя не существует, либо неправильно введен пароль</p>
+        }
+        else
+        {
+            <p></p>
+        }
 
         <button type="submit" class="acceptBtn">Вход</button>
-        <button asp-controller="Registration" asp-action="Index" class="acceptBtn">Регистрация</button>
+        <button asp-controller="Registration" asp-action="Index" class="acceptBtn" >Регистрация</button>
+
     </form>
+
 </div>
 
+
 @section scripts{
-    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-    <script src="~/js/passConfirmationValidation.js" asp-append-version="true"></script>
-}
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/js/passConfirmationValidation.js" asp-append-version="true"></script>
+    }
+

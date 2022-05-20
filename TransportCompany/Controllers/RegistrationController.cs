@@ -28,6 +28,13 @@ namespace TransportCompany.Controllers
             return View();
         }
 
+        public IActionResult CheckPK(string phoneNumber)
+        {
+            if (_passengerDAL.Get(phoneNumber) != null)
+                return Json(false);
+            return Json(true);
+        }
+
         [HttpPost]
         public IActionResult Add(string phoneNumber, string password, string firstName, string secondName, string patronym, DateTime birthDate)
         {

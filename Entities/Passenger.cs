@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -13,6 +14,7 @@ namespace Entities
     {
         [Required(ErrorMessage = "Не указан телефон")]
         [RegularExpression(@"^[+][7][0-9]{10}", ErrorMessage = "Введите телефон в формате +7ХХХХХХХХХХ")]
+        [Remote(action: "CheckPK", controller: "Registration", ErrorMessage = "Телефон уже используется")]
         public string PhoneNumber { get; set; }
 
         [Required(ErrorMessage = "Не указан пароль")]
