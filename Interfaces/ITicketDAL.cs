@@ -9,7 +9,7 @@ namespace Interfaces
 {
     public interface ITicketDAL
     {
-        public Ticket Get(int phonePassenger);
+        public Ticket Get(string phonePassenger);
         public void Add(Ticket ticket);
     }
 }

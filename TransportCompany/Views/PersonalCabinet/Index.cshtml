@@ -1,10 +1,101 @@
 ﻿@using Entities
-@model Passenger
+@model PersonalCabinetModel
 @{
     ViewData["Title"] = "PersonalCabinet";
 }
 
-<div class="loginForm">
-    <h1>@Model.FirstName @Model.SecondName</h1>
-    
+<div class="personalCabinet">
+    <div class="upperInfo">
+        <div>
+            <h1>@Model.Passenger.FirstName @Model.Passenger.SecondName</h1>
+        </div>
+
+        <div class="tariffInfo">
+            <div class="type">
+                Ваш тариф: <div class="valueOfType"> @Model.Tariff.Name </div>
+                @if (@Model.Ticket.TripRemains != null)
+                {
+                    <div class="infoContainer"><div class="type">Осталось поездок:</div> <div class="valueOfType">@Model.Ticket.TripRemains</div></div>
+                }
+                else
+                {
+                    <div class="infoContainer"><div class="type">Действителен до:</div> <div class="valueOfType"> @Model.Ticket.Expiration</div></div>
+                }
+            </div>
+        </div>
+    </div>
+
+    @foreach (TripViewModel trip in @Model.Trips)
+    {
+        <div>
+            <p class="valueOfType">
+                @if (trip.TripTime.Year == DateTime.Now.Year && trip.TripTime.Month == DateTime.Now.Month && trip.TripTime.Day == DateTime.Now.Day)
+                {
+                    <text>Сегодня</text>
+                }
+
+                else if (trip.TripTime.Year == DateTime.Now.Year && trip.TripTime.Month == DateTime.Now.Month && trip.TripTime.Day == DateTime.Now.Day - 1)
+                {
+                    <text>Вчера</text>
+                }
+
+                else
+                {
+                    <text>@trip.TripTime.Year @trip.TripTime.Month @trip.TripTime.Day</text>
+                }
+
+
+                @if (trip.TripTime.Hour >= 0 && trip.TripTime.Hour <= 5)
+                {
+                    <text>ночью</text>
+                }
+
+                else if (trip.TripTime.Hour >= 6 && trip.TripTime.Hour <= 11)
+                {
+                    <text>утром</text>
+                }
+
+                else if (trip.TripTime.Hour >= 12 && trip.TripTime.Hour <= 18)
+                {
+                    <text>днем</text>
+                }
+
+                else
+                {
+                    <text>вечером</text>
+                }
+
+                Вас вёз:
+            </p>
+
+            <table class="driverTable">
+
+                <tr>
+                    <th>Водитель</th>
+                    <th>Маршрут</th>
+                    <th>Регистрационный номер</th>
+                    <th>Время поездки</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="photoContainer">
+                            <img class=driverPhoto src="/driverPhotos/@trip.DriverPhotoPath">
+                            <p class="driverName">@trip.DriverFirstName</p>
+
+                        </div>
+                    </td>
+
+                    <td>
+                        Маршрут @trip.Route
+                    </td>
+                    <td>
+                        @trip.StockNumber
+                    </td>
+                    <td>
+                        @trip.TripTime
+                    </td>
+                </tr>
+            </table>
+        </div>
+    }
 </div>

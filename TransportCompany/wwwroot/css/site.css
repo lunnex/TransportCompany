@@ -89,3 +89,70 @@ body {
 .busPic {
     width: 70%;
 }
+
+.driverTable{
+    table-layout : fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 1px solid gray;
+    margin-bottom:30px;
+    text-align:center;
+}
+
+.photoContainer{
+    display: flex;
+    flex-direction:column;
+}
+
+.driverPhoto {
+    margin: 30px;
+    margin-bottom: 10px;
+    width: 120px;
+    height: 120px;
+    border-radius: 500px;
+    border: 0px solid black;
+    align-self:center;
+}
+
+.driverName{
+    position:center;
+    font-size: 25px;
+}
+
+.upperInfo {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    margin-bottom: 50px;
+}
+
+.tariffInfo {
+    display: flex;
+    margin-left: 30%;
+    flex-direction: column;
+}
+
+.personalCabinet {
+    display: flex;
+    flex-direction: column;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.type{
+    font-size: 22px;
+    font-weight:700;
+}
+
+.valueOfType {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.navbar-nav {
+    margin-left: 100%;
+    margin-right: 0;
+}

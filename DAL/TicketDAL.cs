@@ -1,12 +1,8 @@
 ﻿using Entities;
 using Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
@@ -54,14 +50,14 @@ namespace DAL
             }
         }
 
-        public Ticket Get(int phonePassenger)
+        public Ticket Get(string phonePassenger)
         {
             Ticket ticket = null;
 
             using (var connection = new SqlConnection(_connectoinString))
             {
                 var command = connection.CreateCommand();
-                command.CommandText = "AddTicket";
+                command.CommandText = "GetTicket";
                 command.CommandType = System.Data.CommandType.StoredProcedure;
                 command.Parameters.Add("@passenger", System.Data.SqlDbType.NVarChar).Value = phonePassenger;
                 connection.Open();

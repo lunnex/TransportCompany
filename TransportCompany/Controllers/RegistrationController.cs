@@ -3,9 +3,7 @@ using DAL;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
-using Microsoft.AspNetCore.Identity;
 
 namespace TransportCompany.Controllers
 {
