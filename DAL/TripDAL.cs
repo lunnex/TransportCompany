@@ -30,7 +30,7 @@ namespace DAL
 
                 while (reader.Read())
                 {
-                    trip = new Trip(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetDateTime(3), reader.IsDBNull(4) ? null : reader.GetInt32(5));
+                    trip = new Trip(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetDateTime(3), reader.IsDBNull(4) ? null : reader.GetInt32(4));
                 }
             }
 

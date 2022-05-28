@@ -8,19 +8,49 @@
     <div class="upperInfo">
         <div>
             <h1>@Model.Passenger.FirstName @Model.Passenger.SecondName</h1>
+            <p>Тел.: @Model.Passenger.PhoneNumber</p>
+            <p>Дата рождения: @Model.Passenger.BirthDate.ToString("yyyy/MM/dd")</p>
+            <a asp-controller="PurchaseHistory" asp-action="Index">Посмотреть историю покупок</a>
         </div>
 
         <div class="tariffInfo">
             <div class="type">
-                Ваш тариф: <div class="valueOfType"> @Model.Tariff.Name </div>
-                @if (@Model.Ticket.TripRemains != null)
+                @if (@Model.Tariff is not null)
                 {
-                    <div class="infoContainer"><div class="type">Осталось поездок:</div> <div class="valueOfType">@Model.Ticket.TripRemains</div></div>
+                    <div class="valueOfType">Ваш тариф:  @Model.Tariff.Name </div>
+                    @if (@Model.Ticket.TripRemains != null)
+                    {
+                        if (@Model.Ticket.TripRemains > 0)
+                        {
+                            <div class="infoContainer"><div class="type">Осталось поездок: </div> <div class="type">@Model.Ticket.TripRemains</div></div>
+
+                        }
+                        else
+                        {
+                            <div class="errorContainer">У Вас не осталось поездок!</div>
+                        }
+                    }
+                    else
+                    {
+                        if (@Model.Ticket.Expiration > DateTime.Now)
+                        {
+                            <div class="infoContainer"><div class="type">Действителен до: </div> <div class="type"> @Model.Ticket.Expiration</div></div>
+                        }
+                        else
+                        {
+                            <div class="errorContainer">Время действия билета истекло!</div>
+                        }
+                    }
+
+                    <a asp-controller="Tariff" asp-action="Index">Выбрать другой тариф</a>
+
                 }
                 else
                 {
-                    <div class="infoContainer"><div class="type">Действителен до:</div> <div class="valueOfType"> @Model.Ticket.Expiration</div></div>
+                    <div div class="valueOfType"> Вы пока не выбрали тариф </div>
+                    <a asp-controller="Tariff" asp-action="Index">Выбрать тариф</a>
                 }
+
             </div>
         </div>
     </div>

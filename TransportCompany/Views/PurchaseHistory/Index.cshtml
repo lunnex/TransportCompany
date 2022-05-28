@@ -1,0 +1,39 @@
+﻿@model PurchaseHistoryModel
+@{
+    ViewData["Title"] = "PuchaseHistory";
+}
+
+<div class="table">
+    <table>
+        <tr>
+            <th>
+                Дата покупки
+            </th>
+            <th>
+                Название тарифа
+            </th>
+            <th>
+                Цена, ₽
+            </th>
+            <th>
+                Тарифная зона
+            </th>
+            <th>
+                Сумма покупки, ₽
+            </th>
+        </tr>
+
+        @foreach (var purchase in @Model.Purchases)
+        {
+            <tr>
+                <td>@purchase.PurchaseTime</td>
+                <td>@purchase.TariffName</td>
+                <td>@purchase.TariffPrice.ToString("######.##")</td>
+                <td>@purchase.TariffZone</td>
+                <td>@purchase.Summ.ToString("######.##")</td>
+            </tr>
+        }
+
+
+    </table>
+</div>

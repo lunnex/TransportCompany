@@ -32,8 +32,8 @@
         <input asp-for="Patronym" type="text" class="patronym">
         <span asp-validation-for="Patronym"></span>
 
-        <p class="dateOfBirth">Дата:</p>
-        <input asp-for="BirthDate" type="date" min="1900-01-01" max ="@DateTime.Today.Year.ToString()-@DateTime.Today.Month.ToString()-@DateTime.Today.Day.ToString()" class="date">
+        <p class="dateOfBirth">Дата рождения:</p>
+        <input asp-for="BirthDate" type="date" min="1900-01-01" max ="@DateTime.Today.ToString("yyyy-MM-dd")" class="date">
         <span asp-validation-for="BirthDate"></span>
 
         <button type="submit" class="acceptBtn">Готово</button>

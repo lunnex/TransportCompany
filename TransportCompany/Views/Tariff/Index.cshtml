@@ -10,8 +10,7 @@
         <tr>
             <th>Доступные тарифы</th>
             <th>Количество доступных поездок</th>
-            <th>Время действия</th>
-            <td>Цена</td>
+            <th>Время действия, часы</th>
             <td></td>
         </tr>
 
@@ -19,17 +18,32 @@
         {
             <tr>
                 <td name="name">@tariff.Name</td>
-                <td name="TripCount">@tariff.TripCount</td>
-                <td name="ValidityPeriod">@tariff.ValidityPeriod</td>
+                @if (@tariff.TripCount is not null)
+                {
+                    <td name="TripCount">@tariff.TripCount</td>
+                }
+                else
+                {
+                    <td name="TripCount">∞</td>
+                }
+
+                @if (@tariff.ValidityPeriod is not null)
+                {
+                    <td name="ValidityPeriod">@tariff.ValidityPeriod</td>
+                }
+                else
+                {
+                    <td name="ValidityPeriod">∞</td>
+                }
                 <td name="Button">
 
-                @if(User.Identity.IsAuthenticated)
-                {
-                    <form asp-controller="Ticket" asp-action="Index" class = chooseTariff>
-                        <input name="tarifId" type="hidden" value = @tariff.Id>
-                        <button type="submit">Выбрать</button>
-                    </form>
-                }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <form asp-controller="Ticket" asp-action="Index" class=chooseTariff>
+                            <input name="tarifId" type="hidden" value=@tariff.Id>
+                            <button type="submit">Выбрать</button>
+                        </form>
+                    }
                 </td>
             </tr>
         }

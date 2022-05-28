@@ -1,0 +1,62 @@
+﻿@model StockModel
+@{
+    ViewData["Title"] = "Stock";
+}
+<h2>Автобус</h2>
+<div class="table">
+    <table>
+        <tr>
+            <th>
+                Регистрационный номер
+            </th>
+            <th>
+                Производитель
+            </th>
+            <th>
+                Год выпуска
+            </th>
+            <th>
+                Объем двигателя
+            </th>
+        </tr>
+
+        @foreach (var bus in @Model.Buses)
+        {
+            <tr>
+                <td>@bus.RegNum</td>
+                <td>@bus.Manufacturer</td>
+                <td>@bus.Year</td>
+                <td>@bus.Volume</td>
+            </tr>
+        }
+    </table>
+
+    <h2>Троллейбус</h2>
+<div class="table">
+    <table>
+        <tr>
+            <th>
+                Регистрационный номер
+            </th>
+            <th>
+                Производитель
+            </th>
+            <th>
+                Год выпуска
+            </th>
+            <th>
+                Тип системы управления
+            </th>
+        </tr>
+
+        @foreach (var bus in @Model.Trolleybuses)
+        {
+            <tr>
+                <td>@bus.RegNum</td>
+                <td>@bus.Manufacturer</td>
+                <td>@bus.Year</td>
+                <td>@bus.ControlType</td>
+            </tr>
+        }
+    </table>
+</div>

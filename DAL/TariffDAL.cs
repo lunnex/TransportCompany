@@ -31,14 +31,7 @@ namespace DAL
 
                 while (reader.Read())
                 {
-                    if (reader[3] is DBNull)
-                    {
-                        tariff = new Tariff(reader.GetInt32(0), reader.GetString(1), reader.GetDecimal(2), null, reader.GetString(4), reader.GetInt32(5));
-                    }
-                    else if (reader[5] is DBNull)
-                    {
-                        tariff = new Tariff(reader.GetInt32(0), reader.GetString(1), reader.GetDecimal(2), (int?)reader.GetInt32(5), reader.GetString(4), null);
-                    }
+                    tariff = new Tariff(reader.GetInt32(0), reader.GetString(1), reader.GetDecimal(2), reader.IsDBNull(3) ? null : reader.GetInt32(3), reader.GetString(4), reader.IsDBNull(5) ? null : reader.GetInt32(5));
                 }
             }
 
@@ -59,14 +52,14 @@ namespace DAL
 
                 while (reader.Read())
                 {
-                    if (reader[3] is DBNull)
-                    {
-                        tariffs.Add(new Tariff(reader.GetInt32(0), reader.GetString(1), reader.GetDecimal(2), null, reader.GetString(4), reader.GetInt32(5)));
-                    }
-                    else if(reader[5] is DBNull)
-                    {
-                        tariffs.Add(new Tariff(reader.GetInt32(0), reader.GetString(1), reader.GetDecimal(2), (int?)reader.GetInt32(5), reader.GetString(4), null));
-                    }
+                    //if (reader[3] is DBNull)
+                    //{
+                        tariffs.Add(new Tariff(reader.GetInt32(0), reader.GetString(1), reader.GetDecimal(2), reader.IsDBNull(3) ? null : reader.GetInt32(3), reader.GetString(4), reader.IsDBNull(5) ? null : reader.GetInt32(5)));
+                    //}
+                    //else if(reader[5] is DBNull)
+                    //{
+                    //    tariffs.Add(new Tariff(reader.GetInt32(0), reader.GetString(1), reader.GetDecimal(2), (int?)reader.GetInt32(5), reader.GetString(4), null));
+                    //}
                 }
             }
 

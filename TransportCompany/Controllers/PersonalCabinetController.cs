@@ -37,7 +37,11 @@ namespace TransportCompany.Controllers
         {
             Passenger passenger = _passengerDAL.Get(User.Identity.Name);
             Ticket ticket = _ticketDAL.Get(User.Identity.Name);
-            Tariff tariff = _tariffDAL.Get(ticket.IdTariff);
+            Tariff tariff = null;
+            if (ticket is not null)
+            {
+                tariff = _tariffDAL.Get(ticket.IdTariff);
+            }
             List<TripViewModel> trips = _tripDAL.GetAllView(User.Identity.Name);
             PersonalCabinetModel personalCabinetModel = new PersonalCabinetModel(passenger, tariff, ticket, trips);
 

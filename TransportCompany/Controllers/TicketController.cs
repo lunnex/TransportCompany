@@ -37,7 +37,6 @@ namespace TransportCompany.Controllers
             return View(purchaseViewModel);
         }
 
-        [HttpPost]
         public IActionResult Add(string phoneUser, int idTariffZone, int tariffId)
         {
             Tariff tariff = _tariffBL.Get(tariffId);

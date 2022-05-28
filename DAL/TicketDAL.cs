@@ -32,7 +32,7 @@ namespace DAL
                 }
                 else
                 {
-                    command.Parameters.Add("@expiration", System.Data.SqlDbType.Int).Value = ticket.Expiration;
+                    command.Parameters.Add("@expiration", System.Data.SqlDbType.DateTime).Value = ticket.Expiration;
                 }
 
                 if (ticket.TripRemains == null)

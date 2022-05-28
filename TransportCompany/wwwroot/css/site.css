@@ -72,6 +72,7 @@ body {
 /* MainPage
 -------------------------------------------------- */
 .mainPageContent {
+    padding-top: 10%;
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
@@ -87,7 +88,9 @@ body {
 }
 
 .busPic {
-    width: 70%;
+    margin-top: 10%;
+    width: 600px;
+    opacity: 40%;
 }
 
 .driverTable{
@@ -155,4 +158,10 @@ body {
 .navbar-nav {
     margin-left: 100%;
     margin-right: 0;
+}
+
+.errorContainer {
+    color: red;
+    font-size: 22px;
+    font-weight: 700;
 }

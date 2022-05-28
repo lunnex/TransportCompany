@@ -33,7 +33,6 @@ namespace TransportCompany.Controllers
             return Json(true);
         }
 
-        [HttpPost]
         public IActionResult Add(string phoneNumber, string password, string firstName, string secondName, string patronym, DateTime birthDate)
         {
             Passenger passenger = null;

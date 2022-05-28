@@ -15,14 +15,12 @@
             <th>Цена, ₽</th>
         </tr>
 
-
-
         @for (int i = 0; i < Model.TariffZones.Count; i++)
         {
             <tr>
                 <td>Зона @Model.TariffZones[i].Name</td>
                 <td>Зона @Model.TariffZones[i].Description</td>
-                <td>@Model.Prices[i]</td>
+                <td>@Model.Prices[i].ToString("######.##")</td>
 
                 <td>
                     <form asp-controller = "Ticket", asp-action = "Add">

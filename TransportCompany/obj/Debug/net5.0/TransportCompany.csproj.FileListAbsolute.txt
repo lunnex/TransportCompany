@@ -103,3 +103,5 @@ C:\Users\ilyak\source\repos\TransportCompany\TransportCompany\bin\Debug\net5.0\M
 C:\Users\ilyak\source\repos\TransportCompany\TransportCompany\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\ilyak\source\repos\TransportCompany\TransportCompany\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
 C:\Users\ilyak\source\repos\TransportCompany\TransportCompany\obj\Debug\net5.0\TransportCompany.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ilyak\source\repos\TransportCompany\TransportCompany\obj\Debug\net5.0\Razor\Views\PurchaseHistory\Index.cshtml.g.cs
+C:\Users\ilyak\source\repos\TransportCompany\TransportCompany\obj\Debug\net5.0\Razor\Views\Stock\Index.cshtml.g.cs

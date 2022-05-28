@@ -22,14 +22,17 @@ namespace Entities
         public string Password { get; set; }
 
         [Required(ErrorMessage = "Не указано имя")]
+        [RegularExpression(@"^[а-яА-Я]{2,90}$", ErrorMessage = "До 90 символов кириллического алфавита")]
         [StringLength(90, ErrorMessage = "Не больше 90 символов")]
         public string FirstName { get; set; }
 
         [Required(ErrorMessage = "Не указана фамилия")]
+        [RegularExpression(@"^[а-яА-Я]{2,90}$", ErrorMessage = "До 90 символов кириллического алфавита")]
         [StringLength(90, ErrorMessage = "Не больше 90 символов")]
         public string SecondName { get; set; }
 
         [Required(ErrorMessage = "Не указано отчество")]
+        [RegularExpression(@"^[а-яА-Я]{2,90}$", ErrorMessage = "До 90 символов кириллического алфавита")]
         [StringLength(90, ErrorMessage = "Не больше 90 символов")]
         public string Patronym { get; set; }
 
