@@ -23,7 +23,7 @@ namespace BLL
             return _busDAL.GetBuses();
         }
 
-        Bus IBusBL.GetBus(string regNum)
+        public Bus GetBus(string regNum)
         {
             return _busDAL.GetBus(regNum);
         }

@@ -14,7 +14,7 @@
         <p class="errorPhone"></p>
 
         <p class="formText2">Пароль:</p>
-        <input asp-for="Password" type="password" class = "pass" pattern="^[A-Za-z1-9]{6,20}$" class="pass">
+        <input asp-for="Password" type="password" class = "pass" pattern="^[A-Za-z0-9]{6,20}$" class="pass">
         <span asp-validation-for="Password"></span>
         <p class="errorPass"></p>
 

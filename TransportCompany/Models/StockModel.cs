@@ -14,6 +14,12 @@ namespace TransportCompany.Models
             Trolleybuses = trolleybuses;
         }
 
+        public StockModel(Bus bus, Trolleybus trolleybus)
+        {
+            Buses = new List<Bus> { bus };
+            Trolleybuses = new List<Trolleybus> { trolleybus };
+        }
+
         public StockModel()
         {
 

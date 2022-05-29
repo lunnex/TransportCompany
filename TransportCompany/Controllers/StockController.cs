@@ -29,5 +29,12 @@ namespace TransportCompany.Controllers
 
             return View(stockModel);
         }
+
+        public IActionResult Instance(string regNum)
+        {
+            StockModel stockModel = new StockModel(_busBL.GetBus(regNum), _trolleybusBL.GetBus(regNum));
+
+            return View(stockModel);
+        }
     }
 }

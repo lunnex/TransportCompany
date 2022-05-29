@@ -10,11 +10,12 @@ function validator() {
         event.preventDefault();
 
         error.textContent = 'Пароли не совпадают';
-        form.insertBefore(error, pass.nextSibling);
+        form.insertBefore(error, confirmPassField.nextSibling);
     }
     else {
         error.textContent = '';
     }
 }
 
+form.addEventListener("keyup", validator);
 acceptBtn.addEventListener("click", validator);

@@ -33,7 +33,6 @@ namespace TransportCompany.Controllers
             return View(lm);
         }
 
-        [HttpPost]
         public async Task<IActionResult> Login(string phoneNumber, string password)
         {
             Passenger passenger = _passengerDAL.Get(phoneNumber);
@@ -59,7 +58,6 @@ namespace TransportCompany.Controllers
             }
         }
 
-        [HttpPost]
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();

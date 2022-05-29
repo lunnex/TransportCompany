@@ -18,7 +18,7 @@ namespace Entities
         public string PhoneNumber { get; set; }
 
         [Required(ErrorMessage = "Не указан пароль")]
-        [RegularExpression(@"^[A-Za-z1-9]{6,20}$", ErrorMessage = "От 6 до 20 символов латинского алфавита и цифр")]
+        [RegularExpression(@"^[A-Za-z0-9]{6,20}$", ErrorMessage = "От 6 до 20 символов латинского алфавита и цифр")]
         public string Password { get; set; }
 
         [Required(ErrorMessage = "Не указано имя")]

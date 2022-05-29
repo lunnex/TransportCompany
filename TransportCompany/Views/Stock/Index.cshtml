@@ -23,7 +23,9 @@
         @foreach (var bus in @Model.Buses)
         {
             <tr>
-                <td>@bus.RegNum</td>
+                <form asp-controller="Stock" asp-action="Instance">
+                    <td><input type="hidden" value = "@bus.RegNum" name="regNum"><button type="submit">@bus.RegNum</button></td>
+                </form>
                 <td>@bus.Manufacturer</td>
                 <td>@bus.Year</td>
                 <td>@bus.Volume</td>
@@ -52,7 +54,10 @@
         @foreach (var bus in @Model.Trolleybuses)
         {
             <tr>
-                <td>@bus.RegNum</td>
+                <form asp-controller="Stock" asp-action="Instance">
+                    <td><input type="hidden" value = "@bus.RegNum" name="regNum"><button type="submit">@bus.RegNum</button></td>
+                </form>
+                
                 <td>@bus.Manufacturer</td>
                 <td>@bus.Year</td>
                 <td>@bus.ControlType</td>

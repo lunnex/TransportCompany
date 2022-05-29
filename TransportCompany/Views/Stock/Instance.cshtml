@@ -1,0 +1,53 @@
+﻿@model StockModel
+@{
+    ViewData["Title"] = "Instance";
+}
+
+<div>
+    @if (@Model.Buses.First() is not null)
+    {
+        <img class="stockPhoto" src=~/pics/stock/buses/@Model.Buses.First().Photo>
+    }
+    else
+    {
+        <img class="stockPhoto" src=~/pics/stock/trolleybuses/@Model.Trolleybuses.First().Photo>
+    }
+</div>
+
+<div>
+
+    @if (@Model.Buses.First() is not null)
+    {
+        <table class="table">
+            <tr>
+                <th>Регистрационный номер</th>
+                <th>Производительр</th>
+                <th>Год производства</th>
+                <th>Объем двигателя</th>
+            </tr>
+            <tr>
+                <td>@Model.Buses.First().RegNum</td>
+                <td>@Model.Buses.First().Manufacturer</td>
+                <td>@Model.Buses.First().Year</td>
+                <td>@Model.Buses.First().Volume</td>
+            </tr>
+        </table>
+    }
+    else
+    {
+        <table class="table">
+            <tr>
+                <th>Регистрационный номер</th>
+                <th>Производительр</th>
+                <th>Год производства</th>
+                <th>Тип системы управления</th>
+            </tr>
+            <tr>
+                <td>@Model.Trolleybuses.First().RegNum</td>
+                <td>@Model.Trolleybuses.First().Manufacturer</td>
+                <td>@Model.Trolleybuses.First().Year</td>
+                <td>@Model.Trolleybuses.First().ControlType</td>
+            </tr>
+        </table>
+    }
+</div>
