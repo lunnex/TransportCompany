@@ -1,0 +1,25 @@
+﻿@using Entities
+@model List<Waybill>
+
+<div>
+    <table class="table">
+        <tr>
+            <th>Регистрационный номер</th>
+            <th>Номер маршрута</th>
+            <th>Имя водителя</th>
+            <th>Фамилия водителя</th>
+            <th>Время начала рейса</th>
+        </tr>
+        @foreach (Waybill waybill in @Model)
+        {
+            <tr>
+                <td>@waybill.RegNum</td>
+                <td>@waybill.RouteNum</td>
+                <td>@waybill.DriverName</td>
+                <td>@waybill.DriverSecondName</td>
+                <td>@waybill.BeginTime</td>
+            </tr>
+        }
+    </table>
+</div>
+
