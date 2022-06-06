@@ -107,3 +107,4 @@ C:\Users\ilyak\source\repos\TransportCompany\TransportCompany\obj\Debug\net5.0\R
 C:\Users\ilyak\source\repos\TransportCompany\TransportCompany\obj\Debug\net5.0\Razor\Views\Stock\Index.cshtml.g.cs
 C:\Users\ilyak\source\repos\TransportCompany\TransportCompany\obj\Debug\net5.0\Razor\Views\Stock\Instance.cshtml.g.cs
 C:\Users\ilyak\source\repos\TransportCompany\TransportCompany\obj\Debug\net5.0\Razor\Views\Waybill\Index.cshtml.g.cs
+C:\Users\ilyak\source\repos\TransportCompany\TransportCompany\obj\Debug\net5.0\Razor\Views\TariffZones\Index.cshtml.g.cs

@@ -1,0 +1,27 @@
+﻿@using Entities
+@model List<TariffZone>
+
+<script src="~/js/map.js"></script>
+
+<div class="main-container">
+    <table class="table">
+        <tr>
+            <th>Название</th>
+            <th>Описание</th>
+            <th>Коэффициент</th>
+        </tr>
+        @foreach (var tariffZone in @Model)
+        {
+            <tr>
+                <td>@tariffZone.Name</td>
+                <td>@tariffZone.Description</td>
+                <td>@tariffZone.Coefficient</td>
+            </tr>
+        }
+
+
+    </table>
+    <div id="map" style="width: 100%; height: 800px"></div>
+
+
+</div>
